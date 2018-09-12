@@ -1,0 +1,82 @@
+---
+title: "Sleep deprivatio and facial features"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Opening required packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr", "haven")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Importing dataset
+```{r}
+SleepDep_facialfeatures_data <- read_sav("face_Analysis_data.sav")
+SleepDep_facialfeatures_data$sleep_deprived <- as.factor(SleepDep_facialfeatures_data$sleep_deprived)
+```
+
+Descriptive statistics
+```{r}
+SleepDep_facialfeatures_data %>%	
+  group_by(sleep_deprived) %>%
+  summarise_at(vars(Eye_Openness_DP, Smile), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+```
+
+```{r}
+diff(range(SleepDep_facialfeatures_data$Smile)) # = 0.1979038
+0.1979038*0.25 #quarter of max possible effect
+
+SleepDep_smile_prior <- prior(normal(0,0.04947595), class = "b")
+
+#model 1. smile
+SleepDep_smile.model <- brm(Smile ~ sleep_deprived, 
+                       data=SleepDep_facialfeatures_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 750,
+                       warmup = 500,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = SleepDep_smile_prior)
+
+marginal_effects(SleepDep_smile.model, "sleep_deprived")
+equi_test(SleepDep_smile.model, eff_size = 0.2, out = "plot")
+equi_test(SleepDep_smile.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(SleepDep_smile.model,"b_sleep_deprived", combine_chains = T))
+
+#model 2. Eye openness
+diff(range(SleepDep_facialfeatures_data$Eye_Openness_DP)) # = 0.1505103
+0.1505103*0.25 #quarter of max possible effect
+
+SleepDep_eye_prior <- prior(normal(0,0.03762758), class = "b")
+
+SleepDep_eyeDroop.model <- brm(Eye_Openness_DP ~ sleep_deprived, 
+                       data=SleepDep_facialfeatures_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 750,
+                       warmup = 500,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = SleepDep_eye_prior)
+
+marginal_effects(SleepDep_eyeDroop.model, "sleep_deprived")
+equi_test(SleepDep_eyeDroop.model, eff_size = 0.2, out = "plot")
+equi_test(SleepDep_eyeDroop.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(SleepDep_eyeDroop.model,"b_sleep_deprived", combine_chains = T))
+```

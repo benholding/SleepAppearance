@@ -1,0 +1,95 @@
+---
+title: "KSS_skin_colour"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Import data
+```{r}
+KSS_skincolour_data <- inner_join(read.csv("Spectro_data.csv"), read.csv("Face_SD_KSS.csv"))
+
+KSS_skincolour_data$Lightness_scaled <- psych::rescale(KSS_skincolour_data$Lightness, mean = 0, sd = 0.25, df =F)
+KSS_skincolour_data$Redness_scaled <- psych::rescale(KSS_skincolour_data$Redness, mean = 0, sd = 0.25, df =F)
+KSS_skincolour_data$Yellowness_scaled <- psych::rescale(KSS_skincolour_data$Yellowness, mean = 0, sd = 0.25, df =F)
+KSS_skincolour_data$KSS_scaled <- psych::rescale(KSS_skincolour_data$KSS, mean = 0, sd = 0.25, df =F)
+
+```
+
+```{r}
+KSSspectro_prior <- set_prior("normal(0,25)", class = "b")
+
+KSS_lightness.model <- brm(Lightness ~ KSS_scaled + Redness_scaled + Yellowness_scaled + (1|ID), 
+                       data=KSS_skincolour_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSspectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(KSS_lightness.model, eff_size = 0.2)
+equi_test(KSS_lightness.model, eff_size = 0.2, out = "plot")
+
+mcmc.pval(as.mcmc(KSS_lightness.model,"b_KSS_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_lightness.model,"b_Redness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_lightness.model,"b_Yellowness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(KSS_lightness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+
+####
+KSS_Redness.model <- brm(Redness ~ KSS_scaled + Lightness_scaled + Yellowness_scaled + (1|ID), 
+                       data=KSS_skincolour_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSspectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(KSS_Redness.model, eff_size = 0.2)
+equi_test(KSS_Redness.model, eff_size = 0.2, out = "plot")
+
+mcmc.pval(as.mcmc(KSS_Redness.model,"b_KSS_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_Redness.model,"b_Lightness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_Redness.model,"b_Yellowness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(KSS_Redness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+
+######
+KSS_Yellowness.model <- brm(Yellowness ~ KSS_scaled + Lightness_scaled + Redness_scaled + (1|ID), 
+                       data=KSS_skincolour_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSspectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(KSS_Yellowness.model, eff_size = 0.2)
+equi_test(KSS_Yellowness.model, eff_size = 0.2, out = "plot")
+
+mcmc.pval(as.mcmc(KSS_Yellowness.model,"b_KSS_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_Yellowness.model,"b_Lightness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(KSS_Yellowness.model,"b_Redness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(KSS_Yellowness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+```
+

@@ -1,0 +1,74 @@
+---
+title: "KSS_facialfeatures"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Opening required packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr", "haven")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Import data
+```{r}
+KSS_facialfeatures_data <- inner_join(read_sav("face_Analysis_data.sav"), read.csv("Face_SD_KSS.csv"))
+
+
+KSS_facialfeatures_data$KSS_scaled <- psych::rescale(KSS_facialfeatures_data$KSS, mean = 0, sd = 0.25, df =F)
+
+```
+
+### this chunk need still to be changed from sleepDep to KSS
+```{r}
+KSS_smile_prior <- prior(normal(0,0.04947595), class = "b")
+
+#model 1. smile
+KSS_smile.model <- brm(Smile ~ KSS_scaled, 
+                       data=KSS_facialfeatures_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = KSS_smile_prior)
+
+marginal_effects(KSS_smile.model, "KSS_scaled")
+equi_test(KSS_smile.model, eff_size = 0.2, out = "plot")
+equi_test(KSS_smile.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(KSS_smile.model,"b_KSS_scaled", combine_chains = T))
+
+#model 2. Eye openness
+
+KSS_eyedroop_prior <- prior(normal(0,0.03762758), class = "b")
+
+KSS_eyeDroop.model <- brm(Eye_Openness_DP ~ KSS_scaled, 
+                       data=KSS_facialfeatures_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = KSS_eyedroop_prior)
+
+marginal_effects(KSS_eyeDroop.model, "KSS_scaled")
+equi_test(KSS_eyeDroop.model, eff_size = 0.2, out = "plot")
+equi_test(KSS_eyeDroop.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(KSS_eyeDroop.model,"b_KSS_scaled", combine_chains = T))
+```

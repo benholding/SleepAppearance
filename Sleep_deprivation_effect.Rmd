@@ -1,0 +1,137 @@
+---
+title: "Sleep deprivation effects on subjective ratingss"
+author: "Benjamin Holding"
+date: "25/06/2018"
+output: html_document
+---
+Opening required packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Importing dataset
+* original multilevel dataset (not perrett one)
+* split into 3 seperate data-sets
+```{r}
+photoRatings_Completedata <- read.csv("photo_ratings.csv")
+photoRatings_Completedata$Face_SD <- as.factor(photoRatings_Completedata$Face_SD)
+
+photoRatings_health <- photoRatings_Completedata %>% filter(Question == "halsa")
+photoRatings_paleness <- photoRatings_Completedata %>% filter(Question == "blek_hud")
+photoRatings_fatigue <- photoRatings_Completedata %>% filter(Question == "trotthet")
+
+photoRatings_fatigue_new <- photoRatings_fatigue %>% mutate(Response_reverse = (max(Response)-Response)+1)
+```
+
+Exploritory data analysis
+```{r}
+photoRatings_fatigue %>% count(Face_SD,Face_Woman)
+
+photoRatings_health %>%	
+  group_by(Face_SD) %>%
+  summarise_at(vars(Response), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+
+photoRatings_paleness %>%	
+  group_by(Face_SD) %>%
+  summarise_at(vars(Response), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+
+photoRatings_fatigue_new %>%	
+  group_by(Face_SD) %>%
+  summarise_at(vars(Response), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+
+
+ggplot(photoRatings_fatigue, aes(x=Response, y=Face_SD)) +
+  stat_density_ridges(jittered_points = TRUE, alpha = 0.7, point_size = 3, point_shape = "|",
+                      position = position_points_jitter(width = 0.05, height = 0)) 
+```
+
+Inferential data analysis
+```{r}
+#check what priors are possible:
+get_prior(Response_reverse ~ Face_SD + (Face_SD|Rater_ID) + (1|Face_ID), 
+                       data=photoRatings_fatigue_new, 
+                       family=cumulative())
+# set priors on possible effect
+ratings_prior <- prior(normal(0,1.75), class = "b")
+
+#model 1 (no catagory specific effects)
+fatigue.model <- brm(Response_reverse ~ Face_SD + (Face_SD|Rater_ID) + (1|Face_ID), 
+                       data=photoRatings_fatigue_new, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = ratings_prior,
+                       seed = 556644,
+                       sample_prior = T) #summary statistics are on the latent scale
+marginal_effects(fatigue.model, "Face_SD") #see marginal effects
+marginal_effects(fatigue.model, "Face_SD", ordinal = T) #see marginal effects
+equi_test(fatigue.model, rope = c(-0.2844374, 0.2844374)) #hypothesis testing ( .2 SD of the dependent variable around zero)
+tidy_stan(fatigue.model,prob = 0.95)
+sjstats::hdi(as.mcmc(fatigue.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(fatigue.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(fatigue.model,"sd_Rater_ID__Face_SD1", combine_chains = T), prob = 0.95)
+
+sjstats::hdi(as.mcmc(fatigue.model,"Intercept"[6], combine_chains = T), prob = 0.95)
+
+
+fatigue_SleepdepEffect.mcmc <- as.mcmc(fatigue.model,"b_Face_SD1", combine_chains = T) #combine mcmc chains
+mcmc.pval(fatigue_SleepdepEffect.mcmc)
+
+###########################################################################
+health.model <- brm(Response ~ Face_SD + (Face_SD|Rater_ID) + (1|Face_ID), 
+                       data=photoRatings_health, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = ratings_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(health.model, rope = c(-sd(photoRatings_health$Response)*0.2, sd(photoRatings_health$Response)*0.2))
+health_SleepdepEffect.mcmc <- as.mcmc(health.model,"b_Face_SD1", combine_chains = T)
+
+tidy_stan(health.model,prob = 0.95)
+sjstats::hdi(as.mcmc(health.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(health.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(health.model,"sd_Rater_ID__Face_SD1", combine_chains = T), prob = 0.95)
+#combine mcmc chains
+mcmc.pval(health_SleepdepEffect.mcmc)
+
+###########################################################################
+paleness.model <- brm(Response ~ Face_SD + (Face_SD|Rater_ID) + (1|Face_ID), 
+                       data=photoRatings_paleness, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = ratings_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(paleness.model, rope = c(-sd(photoRatings_paleness$Response)*0.2, sd(photoRatings_paleness$Response)*0.2))
+paleness_SleepdepEffect.mcmc <- as.mcmc(paleness.model,"b_Face_SD1", combine_chains = T) #combine mcmc chains
+mcmc.pval(paleness_SleepdepEffect.mcmc)
+
+tidy_stan(paleness.model,prob = 0.95)
+sjstats::hdi(as.mcmc(paleness.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(paleness.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(paleness.model,"sd_Rater_ID__Face_SD1", combine_chains = T), prob = 0.95)
+
+```
+

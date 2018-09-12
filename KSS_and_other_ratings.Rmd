@@ -1,0 +1,122 @@
+---
+title: "KSS_and_other_ratings"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Opening required packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Importing dataset
+* original multilevel dataset (not perrett one)
+* split into 3 seperate data-sets
+```{r}
+photoRatings_Completedata <- read.csv("photo_ratings.csv")
+ID_KSS_data <-  read.csv("Face_SD_KSS.csv")
+KSS_other_ratings_data <- left_join(photoRatings_Completedata, rename(ID_KSS_data, Face_ID = ID))
+KSS_other_ratings_data$KSS_scaled <- as.numeric(psych::rescale(KSS_other_ratings_data$KSS, mean = 0, sd = 0.25, df =F))
+
+KSSphotoRatings_health <- KSS_other_ratings_data %>% filter(Question == "halsa")
+KSSphotoRatings_paleness <- KSS_other_ratings_data %>% filter(Question == "blek_hud")
+KSSphotoRatings_fatigue <- KSS_other_ratings_data %>% filter(Question == "trotthet")
+
+KSSphotoRatings_fatigue_new <- KSSphotoRatings_fatigue %>% mutate(Response_reverse = (max(Response)-Response)+1)
+
+```
+
+```{r}
+# set priors on possible effect
+KSSratings_prior <- prior(normal(0,1.75), class = "b")
+
+#fatigue
+KSS_fatigue.model <- brm(Response_reverse ~ KSS_scaled + (KSS_scaled|Rater_ID) + (1|Face_ID), 
+                       data=KSSphotoRatings_fatigue_new, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSratings_prior,
+                       seed = 556644,
+                       sample_prior = T) #summary statistics are on the latent scale
+
+tidy_stan(KSS_fatigue.model,prob = 0.95)
+
+sjstats::hdi(as.mcmc(KSS_fatigue.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_fatigue.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_fatigue.model,"sd_Rater_ID__KSS_scaled", combine_chains = T), prob = 0.95)
+
+equi_test(KSS_fatigue.model, rope = c(-sd(KSSphotoRatings_fatigue_new$Response_reverse)*0.2, sd(KSSphotoRatings_fatigue_new$Response_reverse)*0.2))
+
+equi_test(KSS_fatigue.model, rope = c(-sd(KSSphotoRatings_fatigue_new$Response_reverse)*0.2, sd(KSSphotoRatings_fatigue_new$Response_reverse)*0.2), out = "plot")
+
+mcmc.pval(as.mcmc(KSS_fatigue.model,"b_KSS_scaled", combine_chains = T))
+
+#Health
+KSS_health.model <- brm(Response ~ KSS_scaled + (KSS_scaled|Rater_ID) + (1|Face_ID), 
+                       data=KSSphotoRatings_health, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSratings_prior,
+                       seed = 556644,
+                       sample_prior = T) #summary statistics are on the latent scale
+marginal_effects(KSS_health.model, "KSS_scaled")
+marginal_effects(KSS_health.model, "KSS_scaled", ordinal = T)
+
+tidy_stan(KSS_health.model,prob = 0.95)
+
+sjstats::hdi(as.mcmc(KSS_health.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_health.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_health.model,"sd_Rater_ID__KSS_scaled", combine_chains = T), prob = 0.95)
+
+equi_test(KSS_health.model, rope = c(-sd(KSSphotoRatings_health$Response)*0.2, sd(KSSphotoRatings_health$Response)*0.2))
+
+equi_test(KSS_health.model, rope = c(-sd(KSSphotoRatings_health$Response)*0.2, sd(KSSphotoRatings_health$Response)*0.2), out = "plot")
+
+mcmc.pval(as.mcmc(KSS_health.model,"b_KSS_scaled", combine_chains = T))
+
+#Paleness
+KSS_paleness.model <- brm(Response ~ KSS_scaled + (KSS_scaled|Rater_ID) + (1|Face_ID), 
+                       data=KSSphotoRatings_paleness, 
+                       family=cumulative(), 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = KSSratings_prior,
+                       seed = 556644,
+                       sample_prior = T) #summary statistics are on the latent scale
+marginal_effects(KSS_paleness.model, "KSS_scaled")
+marginal_effects(KSS_paleness.model, "KSS_scaled", ordinal = T)
+
+tidy_stan(KSS_paleness.model,prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_paleness.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_paleness.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(KSS_paleness.model,"sd_Rater_ID__KSS_scaled", combine_chains = T), prob = 0.95)
+
+equi_test(KSS_paleness.model, rope = c(-sd(KSSphotoRatings_paleness$Response)*0.2, sd(KSSphotoRatings_paleness$Response)*0.2))
+
+equi_test(KSS_paleness.model, rope = c(-sd(KSSphotoRatings_paleness$Response)*0.2, sd(KSSphotoRatings_paleness$Response)*0.2), out = "plot")
+
+mcmc.pval(as.mcmc(KSS_paleness.model,"b_KSS_scaled", combine_chains = T))
+```
+

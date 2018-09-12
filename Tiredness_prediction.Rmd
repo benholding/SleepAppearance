@@ -1,0 +1,93 @@
+---
+title: "fatigue_rating_predictors"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Opening required packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr", "haven")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Importing dataset
+```{r}
+fatigue_predictors_data <- read_sav("face_Analysis_data.sav")
+fatigue_predictors_data$sleep_deprived <- as.factor(fatigue_predictors_data$sleep_deprived)
+fatigue_predictors_data$Eye_Openness_scaled <- psych::rescale(fatigue_predictors_data$Eye_Openness_DP, mean = 0, sd = 0.25, df =F)
+fatigue_predictors_data$Smile_scaled <- psych::rescale(fatigue_predictors_data$Smile, mean = 0, sd = 0.25, df =F)
+fatigue_predictors_data$Face_L_scaled <- psych::rescale(fatigue_predictors_data$Face_L, mean = 0, sd = 0.25, df =F)
+fatigue_predictors_data$Face_a_scaled <- psych::rescale(fatigue_predictors_data$Face_a, mean = 0, sd = 0.25, df =F)
+fatigue_predictors_data$Face_b_scaled <- psych::rescale(fatigue_predictors_data$Face_b, mean = 0, sd = 0.25, df =F)
+
+fatigue_predictors_data_new <- fatigue_predictors_data %>% mutate(fatigue_reverse = (max(Tiredness)-Tiredness)+1)
+
+```
+
+```{r}
+fatiguePrediction_prior <- prior(cauchy(0,1.75), class = "b")
+
+#for the benefit of the figure, i'm going to change the names of the predictors
+fatigue_predictors_data_new$a_face_L <- fatigue_predictors_data_new$Face_L_scaled
+fatigue_predictors_data_new$b_face_a <- fatigue_predictors_data_new$Face_a_scaled
+fatigue_predictors_data_new$c_face_b <- fatigue_predictors_data_new$Face_b_scaled
+fatigue_predictors_data_new$d_eye_openness <- fatigue_predictors_data_new$Eye_Openness_scaled
+fatigue_predictors_data_new$e_mouth_curve <- fatigue_predictors_data_new$Smile_scaled
+
+fatigue_prediction.model <- brm(fatigue_reverse ~ a_face_L +b_face_a+c_face_b +d_eye_openness+e_mouth_curve, 
+                       data=fatigue_predictors_data_new, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = fatiguePrediction_prior)
+
+equi_test(tired_prediction.model, 
+          eff_size = 0.2)
+
+figure <- equi_test(tired_prediction.model, 
+          eff_size = 0.2, 
+          out = "plot",
+          rope.color = "red",
+          legend.title = "Alternative hypothesis decision",
+          x.title = "Unstandardised effect on fatigue rating (probability distribution)",
+          labels = rev(c("Skin colour: Lightness", "Skin colour: Redness", "Skin colour: Yellowness", "Eye-openness","Mouth curvature"))) + theme_ridges() + theme(legend.position = "none")
+
+figure_to_change <- ggplot_build(figure)
+
+figure_to_change$data[[3]]$fill[which(figure_to_change$data[[3]]$group==3)] <- "#56B4E9"
+figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==3)] <- 2
+figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==4)] <- 0
+figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==5)] <- 0
+figure_edit <- ggplot_gtable(figure_to_change)
+grid::grid.newpage()
+grid::grid.draw(figure_edit)
+
+tired_prediction.mcmc.Face_L <- as.mcmc(tired_prediction.model,"b_a_face_L", combine_chains = T) 
+tired_prediction.mcmc.Face_a <- as.mcmc(tired_prediction.model,"b_b_face_a", combine_chains = T) 
+tired_prediction.mcmc.Face_b <- as.mcmc(tired_prediction.model,"c_face_b", combine_chains = T) 
+tired_prediction.mcmc.iOpenness <- as.mcmc(tired_prediction.model,"b_d_eye_openness", combine_chains = T)
+tired_prediction.mcmc.smile <- as.mcmc(tired_prediction.model,"e_mouth_curve", combine_chains = T)
+
+mcmc.pval(tired_prediction.mcmc.Face_L)
+mcmc.pval(tired_prediction.mcmc.Face_a)
+mcmc.pval(tired_prediction.mcmc.Face_b)
+mcmc.pval(tired_prediction.mcmc.iOpenness)
+mcmc.pval(tired_prediction.mcmc.smile)
+
+```
+

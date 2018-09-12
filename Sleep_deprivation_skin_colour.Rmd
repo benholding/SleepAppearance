@@ -1,0 +1,116 @@
+---
+title: "Sleep_deprivation_skincolour"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+Load packages and setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ipak <- function(pkg){
+    new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+    if (length(new.pkg)) 
+        install.packages(new.pkg, dependencies = TRUE)
+    sapply(pkg, require, character.only = TRUE)
+} #function to see if package is installed. Will download if not, and then opens it.
+
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan","MCMC.qpcr", "GGally")
+suppressPackageStartupMessages(ipak(packages))
+rstan_options(auto_write = TRUE)
+
+set.seed(556644)
+```
+
+Import data
+```{r}
+Spectro_data <- read.csv("Spectro_data.csv")
+Spectro_data$SD <- factor(Spectro_data$SD, labels = c("Well-rested", "Sleep deprived"))
+
+Spectro_data$Lightness_scaled <- psych::rescale(Spectro_data$Lightness, mean = 0, sd = 0.25, df =F)
+Spectro_data$Redness_scaled <- psych::rescale(Spectro_data$Redness, mean = 0, sd = 0.25, df =F)
+Spectro_data$Yellowness_scaled <- psych::rescale(Spectro_data$Yellowness, mean = 0, sd = 0.25, df =F)
+```
+
+Descriptive statistics
+```{r}
+Spectro_data %>%	
+  group_by(SD) %>%
+  summarise_at(vars(Lightness, Redness, Yellowness), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+
+plot(Spectro_data$Lightness,Spectro_data$Redness)
+plot(Spectro_data$Lightness,Spectro_data$Yellowness)
+plot(Spectro_data$Yellowness,Spectro_data$Redness)
+
+which(Spectro_data$Lightness < (mean(Spectro_data$Lightness)-sd(Spectro_data$Lightness)*3))
+which(Spectro_data$Lightness > (mean(Spectro_data$Lightness)+sd(Spectro_data$Lightness)*3))
+
+# Making scatterplots for spectrophotometry
+correlation_plot <- ggpairs(Spectro_data, columns = c("Lightness", "Redness", "Yellowness"), lower=list(continuous="smooth", combo="dot")) + theme_bw()
+```
+
+
+```{r}
+#check what priors are possible:
+
+# set priors on possible effect
+spectro_prior <- prior(normal(0,25), class = "b")
+
+#lightness model (controlling for other colours)
+lightness.model <- brm(Lightness ~ SD + Redness_scaled + Yellowness_scaled + (1|ID), 
+                       data=Spectro_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = spectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(lightness.model, eff_size = 0.2)
+equi_test(lightness.model, eff_size = 0.2, out = "plot")
+mcmc.pval(as.mcmc(lightness.model,"b_Intercept", combine_chains = T))
+mcmc.pval(as.mcmc(lightness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(lightness.model,"b_Redness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(lightness.model,"b_Yellowness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(lightness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+
+###############
+Redness.model <- brm(Redness ~ SD + Lightness_scaled + Yellowness_scaled + (1|ID), 
+                       data=Spectro_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = spectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(Redness.model, eff_size = 0.2)
+equi_test(Redness.model, eff_size = 0.2, out = "plot")
+mcmc.pval(as.mcmc(Redness.model,"b_Intercept", combine_chains = T))
+mcmc.pval(as.mcmc(Redness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(Redness.model,"b_Lightness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(Redness.model,"b_Yellowness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(Redness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+
+##########
+Yellowness.model <- brm(Yellowness ~ SD + Lightness_scaled + Redness_scaled + (1|ID), 
+                       data=Spectro_data, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 10000,
+                       warmup = 1000,
+                       prior = spectro_prior,
+                       seed = 556644,
+                       sample_prior = T)
+equi_test(Yellowness.model, eff_size = 0.2)
+equi_test(Yellowness.model, eff_size = 0.2, out = "plot")
+
+mcmc.pval(as.mcmc(Yellowness.model,"b_Intercept", combine_chains = T))
+mcmc.pval(as.mcmc(Yellowness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(Yellowness.model,"b_Lightness_scaled", combine_chains = T))
+mcmc.pval(as.mcmc(Yellowness.model,"b_Redness_scaled", combine_chains = T))
+
+sjstats::hdi(as.mcmc(Yellowness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+```
