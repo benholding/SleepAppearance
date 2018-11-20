@@ -20,7 +20,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 61,halsa,215,7,1,0
 61,halsa,146,7,1,1
 61,halsa,230,7,0,0
-61,halsa,294,7,0,0
 61,halsa,102,7,1,0
 61,halsa,202,7,1,0
 61,halsa,267,7,0,0
@@ -290,7 +289,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 61,trotthet,302,5,0,1
 61,trotthet,147,5,1,1
 61,trotthet,105,1,1,1
-61,trotthet,294,1,0,0
 61,trotthet,278,6,0,0
 61,trotthet,252,6,0,1
 61,trotthet,193,6,1,1
@@ -521,7 +519,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 61,blek_hud,120,1,1,1
 61,blek_hud,109,1,1,0
 61,blek_hud,130,1,1,1
-61,blek_hud,294,1,0,0
 61,blek_hud,173,4,1,0
 61,blek_hud,115,4,0,1
 61,blek_hud,213,7,1,1
@@ -714,7 +711,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 55,trotthet,155,2,1,0
 55,trotthet,176,3,1,1
 55,trotthet,226,4,1,1
-55,trotthet,294,3,0,0
 55,trotthet,255,5,0,0
 55,trotthet,425,5,1,1
 55,trotthet,190,2,0,1
@@ -727,7 +723,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 55,trotthet,129,2,1,0
 55,trotthet,271,2,0,1
 55,halsa,205,5,0,1
-55,halsa,294,2,0,0
 55,halsa,232,5,1,1
 55,halsa,219,6,0,0
 55,halsa,134,4,1,0
@@ -920,7 +915,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 55,blek_hud,244,5,1,1
 55,blek_hud,132,2,1,0
 55,blek_hud,301,5,0,1
-55,blek_hud,294,5,0,0
 55,blek_hud,161,6,0,0
 55,blek_hud,135,6,1,1
 55,blek_hud,204,3,1,0
@@ -1169,7 +1163,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 62,trotthet,172,7,0,1
 62,trotthet,108,5,1,1
 62,trotthet,209,4,1,0
-62,trotthet,294,3,0,0
 62,trotthet,102,5,1,0
 62,trotthet,254,6,1,0
 62,trotthet,213,5,1,1
@@ -1296,7 +1289,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 62,halsa,187,4,0,0
 62,halsa,101,7,1,0
 62,halsa,135,7,1,1
-62,halsa,294,2,0,0
 62,halsa,238,2,1,0
 62,halsa,117,6,0,0
 62,halsa,125,7,1,1
@@ -1569,7 +1561,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 62,blek_hud,196,5,1,0
 62,blek_hud,116,1,0,1
 62,blek_hud,215,7,1,0
-62,blek_hud,294,2,0,0
 62,blek_hud,305,6,0,0
 62,blek_hud,208,5,1,0
 62,blek_hud,126,4,1,1
@@ -1774,7 +1765,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 57,halsa,219,4,0,0
 57,halsa,178,4,1,1
 57,halsa,274,4,1,0
-57,halsa,294,3,0,0
 57,halsa,220,3,0,0
 57,halsa,417,3,1,1
 57,halsa,279,4,1,1
@@ -1957,7 +1947,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 57,trotthet,116,4,0,1
 57,trotthet,194,4,1,1
 57,trotthet,151,3,1,0
-57,trotthet,294,4,0,0
 57,trotthet,248,4,0,1
 57,trotthet,269,4,0,0
 57,trotthet,252,3,0,1
@@ -2011,7 +2000,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 57,blek_hud,164,4,1,0
 57,blek_hud,186,2,1,0
 57,blek_hud,263,5,0,1
-57,blek_hud,294,2,0,0
 57,blek_hud,153,5,1,1
 57,blek_hud,162,5,0,0
 57,blek_hud,101,4,1,0
@@ -2221,7 +2209,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 54,trotthet,263,3,0,1
 54,trotthet,120,2,1,1
 54,trotthet,211,2,1,1
-54,trotthet,294,1,0,0
 54,trotthet,417,4,1,1
 54,trotthet,293,4,0,0
 54,trotthet,286,3,0,1
@@ -2499,7 +2486,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 54,halsa,211,7,1,1
 54,halsa,219,7,0,0
 54,halsa,177,7,1,1
-54,halsa,294,4,0,0
 54,halsa,265,7,0,1
 54,halsa,123,6,0,1
 54,halsa,125,7,1,1
@@ -2595,7 +2581,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 54,blek_hud,287,6,1,0
 54,blek_hud,159,6,0,0
 54,blek_hud,108,6,1,1
-54,blek_hud,294,1,0,0
 54,blek_hud,288,6,1,0
 54,blek_hud,239,7,0,1
 54,blek_hud,220,5,0,0
@@ -2817,7 +2802,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 48,trotthet,288,4,1,0
 48,trotthet,209,7,1,0
 48,trotthet,281,3,0,1
-48,trotthet,294,1,0,0
 48,trotthet,149,4,1,0
 48,trotthet,264,4,0,1
 48,trotthet,425,4,1,1
@@ -3027,7 +3011,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 48,halsa,255,7,0,0
 48,halsa,193,5,1,1
 48,halsa,208,4,1,0
-48,halsa,294,3,0,0
 48,halsa,146,3,1,1
 48,halsa,106,4,1,1
 48,halsa,151,4,1,0
@@ -3177,7 +3160,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 48,blek_hud,263,4,0,1
 48,blek_hud,131,5,1,1
 48,blek_hud,174,3,1,1
-48,blek_hud,294,4,0,0
 48,blek_hud,266,1,0,1
 48,blek_hud,264,6,0,1
 48,blek_hud,128,3,1,0
@@ -3324,7 +3306,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 46,trotthet,123,5,0,1
 46,trotthet,292,4,1,1
 46,trotthet,433,6,1,1
-46,trotthet,294,4,0,0
 46,trotthet,301,5,0,1
 46,trotthet,119,6,1,0
 46,trotthet,177,6,1,1
@@ -3474,7 +3455,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 46,halsa,271,5,0,1
 46,halsa,274,5,1,0
 46,halsa,219,6,0,0
-46,halsa,294,4,0,0
 46,halsa,105,5,1,1
 46,halsa,289,6,0,0
 46,halsa,160,6,0,0
@@ -3788,7 +3768,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 46,blek_hud,182,3,1,1
 46,blek_hud,153,3,1,1
 46,blek_hud,180,3,1,0
-46,blek_hud,294,2,0,0
 46,blek_hud,245,5,0,1
 46,blek_hud,128,2,1,0
 46,blek_hud,573,3,1,0
@@ -3925,7 +3904,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 42,trotthet,187,2,0,0
 42,trotthet,189,1,0,1
 42,trotthet,110,1,1,1
-42,trotthet,294,2,0,0
 42,trotthet,226,4,1,1
 42,trotthet,259,3,0,1
 42,trotthet,235,4,1,1
@@ -4108,7 +4086,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 42,halsa,275,4,0,1
 42,halsa,178,3,1,1
 42,halsa,104,7,1,0
-42,halsa,294,3,0,0
 42,halsa,143,7,0,1
 42,halsa,214,5,1,1
 42,halsa,213,6,1,1
@@ -4289,7 +4266,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 42,blek_hud,147,5,1,1
 42,blek_hud,224,6,0,0
 42,blek_hud,185,5,1,0
-42,blek_hud,294,1,0,0
 42,blek_hud,138,7,0,0
 42,blek_hud,267,6,0,0
 42,blek_hud,152,7,1,1
@@ -4396,7 +4372,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 27,halsa,255,4,0,0
 27,halsa,293,4,0,0
 27,halsa,178,4,1,1
-27,halsa,294,3,0,0
 27,halsa,137,4,0,0
 27,halsa,215,3,1,0
 27,halsa,271,3,0,1
@@ -4587,7 +4562,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 27,trotthet,278,5,0,0
 27,trotthet,106,5,1,1
 27,trotthet,226,4,1,1
-27,trotthet,294,3,0,0
 27,trotthet,165,4,0,0
 27,trotthet,285,5,0,0
 27,trotthet,130,6,1,1
@@ -4819,7 +4793,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 27,blek_hud,182,3,1,1
 27,blek_hud,253,3,1,0
 27,blek_hud,281,5,0,1
-27,blek_hud,294,5,0,0
 27,blek_hud,152,4,1,1
 27,blek_hud,247,5,0,1
 27,blek_hud,124,4,0,1
@@ -4975,7 +4948,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 26,trotthet,269,6,0,0
 26,trotthet,176,6,1,1
 26,trotthet,263,5,0,1
-26,trotthet,294,2,0,0
 26,trotthet,180,2,1,0
 26,trotthet,154,2,1,0
 26,trotthet,131,2,1,1
@@ -5096,7 +5068,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 26,halsa,241,4,0,0
 26,halsa,153,3,1,1
 26,halsa,213,4,1,1
-26,halsa,294,3,0,0
 26,halsa,249,5,1,0
 26,halsa,232,4,1,1
 26,halsa,127,4,1,1
@@ -5402,7 +5373,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 26,blek_hud,212,3,1,1
 26,blek_hud,301,2,0,1
 26,blek_hud,181,2,1,0
-26,blek_hud,294,1,0,0
 26,blek_hud,226,3,1,1
 26,blek_hud,215,4,1,0
 26,blek_hud,205,4,0,1
@@ -5584,7 +5554,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 22,halsa,132,6,1,0
 22,halsa,238,2,1,0
 22,halsa,110,6,1,1
-22,halsa,294,4,0,0
 22,halsa,431,6,1,0
 22,halsa,139,6,1,0
 22,halsa,191,6,0,0
@@ -5612,7 +5581,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 22,trotthet,255,5,0,0
 22,trotthet,177,5,1,1
 22,trotthet,146,5,1,1
-22,trotthet,294,1,0,0
 22,trotthet,260,1,0,0
 22,trotthet,194,3,1,1
 22,trotthet,248,1,0,1
@@ -5927,7 +5895,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 22,blek_hud,221,7,1,1
 22,blek_hud,246,5,0,0
 22,blek_hud,181,6,1,0
-22,blek_hud,294,1,0,0
 22,blek_hud,149,5,1,0
 22,blek_hud,260,6,0,0
 22,blek_hud,146,6,1,1
@@ -5981,7 +5948,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 17,trotthet,263,5,0,1
 17,trotthet,267,4,0,0
 17,trotthet,210,3,1,0
-17,trotthet,294,2,0,0
 17,trotthet,265,6,0,1
 17,trotthet,174,5,1,1
 17,trotthet,198,7,1,0
@@ -6277,7 +6243,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 17,halsa,152,6,1,1
 17,halsa,226,7,1,1
 17,halsa,143,6,0,1
-17,halsa,294,4,0,0
 17,halsa,247,6,0,1
 17,halsa,195,6,1,0
 17,halsa,203,7,1,1
@@ -6449,7 +6414,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 17,blek_hud,149,5,1,0
 17,blek_hud,248,5,0,1
 17,blek_hud,255,6,0,0
-17,blek_hud,294,2,0,0
 17,blek_hud,292,5,1,1
 17,blek_hud,281,7,0,1
 17,blek_hud,108,6,1,1
@@ -6565,7 +6529,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 63,trotthet,282,1,0,0
 63,trotthet,136,5,1,1
 63,trotthet,289,2,0,0
-63,trotthet,294,1,0,0
 63,trotthet,239,6,0,1
 63,trotthet,210,2,1,0
 63,trotthet,195,2,1,0
@@ -6686,7 +6649,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 63,halsa,214,1,1,1
 63,halsa,183,2,0,0
 63,halsa,132,2,1,0
-63,halsa,294,1,0,0
 63,halsa,249,3,1,0
 63,halsa,206,5,0,1
 63,halsa,269,6,0,0
@@ -6872,7 +6834,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 63,blek_hud,208,6,1,0
 63,blek_hud,220,5,0,0
 63,blek_hud,289,2,0,0
-63,blek_hud,294,5,0,0
 63,blek_hud,241,6,0,0
 63,blek_hud,281,6,0,1
 63,blek_hud,431,6,1,0
@@ -7137,7 +7098,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 59,halsa,242,5,0,0
 59,halsa,210,5,1,0
 59,halsa,272,4,0,1
-59,halsa,294,4,0,0
 59,halsa,213,5,1,1
 59,halsa,171,5,0,1
 59,halsa,101,5,1,0
@@ -7227,7 +7187,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 59,halsa,202,4,1,0
 59,halsa,182,4,1,1
 59,trotthet,184,4,0,0
-59,trotthet,294,3,0,0
 59,trotthet,267,6,0,0
 59,trotthet,274,4,1,0
 59,trotthet,285,5,0,0
@@ -7564,7 +7523,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 59,blek_hud,573,5,1,0
 59,blek_hud,242,4,0,0
 59,blek_hud,298,4,0,1
-59,blek_hud,294,5,0,0
 59,blek_hud,105,4,1,1
 59,blek_hud,143,5,0,1
 59,blek_hud,159,5,0,0
@@ -7677,7 +7635,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 53,halsa,167,4,0,1
 53,halsa,287,2,1,0
 53,halsa,264,5,0,1
-53,halsa,294,4,0,0
 53,halsa,244,5,1,1
 53,halsa,214,4,1,1
 53,halsa,153,3,1,1
@@ -7857,7 +7814,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 53,trotthet,143,4,0,1
 53,trotthet,151,4,1,0
 53,trotthet,188,3,0,0
-53,trotthet,294,2,0,0
 53,trotthet,139,4,1,0
 53,trotthet,269,5,0,0
 53,trotthet,286,4,0,1
@@ -8050,7 +8006,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 53,blek_hud,240,6,0,1
 53,blek_hud,108,5,1,1
 53,blek_hud,218,5,1,1
-53,blek_hud,294,3,0,0
 53,blek_hud,185,5,1,0
 53,blek_hud,202,5,1,0
 53,blek_hud,175,4,1,1
@@ -8262,7 +8217,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 52,halsa,162,3,0,0
 52,halsa,176,5,1,1
 52,halsa,102,4,1,0
-52,halsa,294,5,0,0
 52,halsa,216,5,1,0
 52,halsa,125,5,1,1
 52,halsa,285,3,0,0
@@ -8370,7 +8324,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 52,trotthet,188,3,0,0
 52,trotthet,573,3,1,0
 52,trotthet,176,4,1,1
-52,trotthet,294,2,0,0
 52,trotthet,215,3,1,0
 52,trotthet,103,3,1,0
 52,trotthet,228,3,1,1
@@ -8658,7 +8611,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 52,blek_hud,191,3,0,0
 52,blek_hud,264,4,0,1
 52,blek_hud,573,4,1,0
-52,blek_hud,294,2,0,0
 52,blek_hud,305,5,0,0
 52,blek_hud,267,4,0,0
 50,halsa,167,5,0,1
@@ -8712,7 +8664,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 50,halsa,117,4,0,0
 50,halsa,124,3,0,1
 50,halsa,204,4,1,0
-50,halsa,294,4,0,0
 50,halsa,236,4,1,1
 50,halsa,270,2,0,1
 50,halsa,184,4,0,0
@@ -8902,7 +8853,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 50,trotthet,214,4,1,1
 50,trotthet,138,4,0,0
 50,trotthet,243,4,1,1
-50,trotthet,294,1,0,0
 50,trotthet,208,4,1,0
 50,trotthet,264,4,0,1
 50,trotthet,239,4,0,1
@@ -9128,7 +9078,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 50,blek_hud,267,3,0,0
 50,blek_hud,149,3,1,0
 50,blek_hud,108,2,1,1
-50,blek_hud,294,1,0,0
 50,blek_hud,255,2,0,0
 50,blek_hud,276,5,0,0
 50,blek_hud,160,1,0,0
@@ -9289,7 +9238,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 49,halsa,275,4,0,1
 49,halsa,194,5,1,1
 49,halsa,213,4,1,1
-49,halsa,294,4,0,0
 49,halsa,209,5,1,0
 49,halsa,232,6,1,1
 49,halsa,244,6,1,1
@@ -9406,7 +9354,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 49,trotthet,185,6,1,0
 49,trotthet,156,5,1,0
 49,trotthet,281,3,0,1
-49,trotthet,294,2,0,0
 49,trotthet,264,4,0,1
 49,trotthet,236,6,1,1
 49,trotthet,243,5,1,1
@@ -9735,7 +9682,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 49,blek_hud,130,4,1,1
 49,blek_hud,140,3,1,0
 49,blek_hud,260,3,0,0
-49,blek_hud,294,2,0,0
 49,blek_hud,168,3,0,0
 49,blek_hud,166,6,0,1
 49,blek_hud,274,3,1,0
@@ -9801,7 +9747,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 47,halsa,278,5,0,0
 47,halsa,126,4,1,1
 47,halsa,210,2,1,0
-47,halsa,294,2,0,0
 47,halsa,254,4,1,0
 47,halsa,293,3,0,0
 47,halsa,260,6,0,0
@@ -9974,7 +9919,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 47,trotthet,244,6,1,1
 47,trotthet,228,6,1,1
 47,trotthet,201,4,1,0
-47,trotthet,294,1,0,0
 47,trotthet,241,3,0,0
 47,trotthet,274,5,1,0
 47,trotthet,247,6,0,1
@@ -10152,7 +10096,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 47,blek_hud,152,4,1,1
 47,blek_hud,220,3,0,0
 47,blek_hud,125,3,1,1
-47,blek_hud,294,2,0,0
 47,blek_hud,274,3,1,0
 47,blek_hud,242,5,0,0
 47,blek_hud,128,1,1,0
@@ -10364,7 +10307,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 45,halsa,117,7,0,0
 45,halsa,270,6,0,1
 45,halsa,110,5,1,1
-45,halsa,294,4,0,0
 45,halsa,301,6,0,1
 45,halsa,269,6,0,0
 45,halsa,194,6,1,1
@@ -10546,7 +10488,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 45,trotthet,121,6,1,0
 45,trotthet,301,6,0,1
 45,trotthet,232,6,1,1
-45,trotthet,294,1,0,0
 45,trotthet,425,6,1,1
 45,trotthet,112,7,1,0
 45,trotthet,280,4,1,0
@@ -10809,7 +10750,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 45,blek_hud,230,6,0,0
 45,blek_hud,242,5,0,0
 45,blek_hud,171,5,0,1
-45,blek_hud,294,5,0,0
 45,blek_hud,160,4,0,0
 45,blek_hud,267,5,0,0
 45,blek_hud,215,6,1,0
@@ -10838,7 +10778,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 44,trotthet,219,3,0,0
 44,trotthet,112,5,1,0
 44,trotthet,203,4,1,1
-44,trotthet,294,2,0,0
 44,trotthet,269,5,0,0
 44,trotthet,254,4,1,0
 44,trotthet,175,3,1,1
@@ -11010,7 +10949,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 44,halsa,167,4,0,1
 44,halsa,146,4,1,1
 44,halsa,112,6,1,0
-44,halsa,294,3,0,0
 44,halsa,144,5,0,1
 44,halsa,117,5,0,0
 44,halsa,268,5,0,0
@@ -11291,7 +11229,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 44,blek_hud,229,4,0,0
 44,blek_hud,276,3,0,0
 44,blek_hud,128,5,1,0
-44,blek_hud,294,3,0,0
 44,blek_hud,182,3,1,1
 44,blek_hud,164,5,1,0
 44,blek_hud,219,5,0,0
@@ -11512,7 +11449,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 43,trotthet,213,5,1,1
 43,trotthet,207,3,1,0
 43,trotthet,173,6,1,0
-43,trotthet,294,2,0,0
 43,trotthet,144,6,0,1
 43,trotthet,163,7,1,0
 43,trotthet,271,7,0,1
@@ -11671,7 +11607,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 43,halsa,276,3,0,0
 43,halsa,241,5,0,0
 43,halsa,154,5,1,0
-43,halsa,294,5,0,0
 43,halsa,101,6,1,0
 43,halsa,205,6,0,1
 43,halsa,109,6,1,0
@@ -11732,7 +11667,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 43,blek_hud,103,2,1,0
 43,blek_hud,111,3,1,1
 43,blek_hud,285,1,0,0
-43,blek_hud,294,1,0,0
 43,blek_hud,153,1,1,1
 43,blek_hud,124,4,0,1
 43,blek_hud,287,1,1,0
@@ -11955,7 +11889,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 40,trotthet,112,6,1,0
 40,trotthet,159,3,0,0
 40,trotthet,162,5,0,0
-40,trotthet,294,5,0,0
 40,trotthet,573,6,1,0
 40,trotthet,197,4,1,0
 40,trotthet,274,5,1,0
@@ -12157,7 +12090,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 40,halsa,301,6,0,1
 40,halsa,215,4,1,0
 40,halsa,197,5,1,0
-40,halsa,294,5,0,0
 40,halsa,104,5,1,0
 40,halsa,239,6,0,1
 40,halsa,205,3,0,1
@@ -12432,7 +12364,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 40,blek_hud,256,5,0,1
 40,blek_hud,152,5,1,1
 40,blek_hud,177,4,1,1
-40,blek_hud,294,3,0,0
 40,blek_hud,138,7,0,0
 40,blek_hud,270,6,0,1
 40,blek_hud,191,4,0,0
@@ -12569,7 +12500,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 38,trotthet,203,5,1,1
 38,trotthet,172,5,0,1
 38,trotthet,143,5,0,1
-38,trotthet,294,3,0,0
 38,trotthet,241,4,0,0
 38,trotthet,259,5,0,1
 38,trotthet,202,4,1,0
@@ -12782,7 +12712,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 38,halsa,125,4,1,1
 38,halsa,106,6,1,1
 38,halsa,209,4,1,0
-38,halsa,294,4,0,0
 38,halsa,193,6,1,1
 38,halsa,111,4,1,1
 38,halsa,198,4,1,0
@@ -12832,7 +12761,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 38,blek_hud,119,4,1,0
 38,blek_hud,285,4,0,0
 38,blek_hud,249,3,1,0
-38,blek_hud,294,4,0,0
 38,blek_hud,246,5,0,0
 38,blek_hud,274,4,1,0
 38,blek_hud,127,4,1,1
@@ -13065,7 +12993,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 37,trotthet,119,4,1,0
 37,trotthet,133,4,1,0
 37,trotthet,167,5,0,1
-37,trotthet,294,3,0,0
 37,trotthet,105,4,1,1
 37,trotthet,222,4,1,1
 37,trotthet,124,3,0,1
@@ -13265,7 +13192,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 37,halsa,112,6,1,0
 37,halsa,125,5,1,1
 37,halsa,193,4,1,1
-37,halsa,294,3,0,0
 37,halsa,120,4,1,1
 37,halsa,244,5,1,1
 37,halsa,275,5,0,1
@@ -13490,7 +13416,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 37,blek_hud,185,4,1,0
 37,blek_hud,178,6,1,1
 37,blek_hud,274,5,1,0
-37,blek_hud,294,2,0,0
 37,blek_hud,301,3,0,1
 37,blek_hud,131,5,1,1
 37,blek_hud,121,3,1,0
@@ -13701,7 +13626,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 36,trotthet,127,4,1,1
 36,trotthet,202,3,1,0
 36,trotthet,146,3,1,1
-36,trotthet,294,2,0,0
 36,trotthet,248,4,0,1
 36,trotthet,147,3,1,1
 36,trotthet,160,2,0,0
@@ -13841,7 +13765,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 36,halsa,417,6,1,1
 36,halsa,217,5,1,1
 36,halsa,215,4,1,0
-36,halsa,294,3,0,0
 36,halsa,149,4,1,0
 36,halsa,247,5,0,1
 36,halsa,223,4,0,0
@@ -13992,7 +13915,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 36,blek_hud,186,1,1,0
 36,blek_hud,167,3,0,1
 36,blek_hud,265,4,0,1
-36,blek_hud,294,1,0,0
 36,blek_hud,172,1,0,1
 36,blek_hud,243,4,1,1
 36,blek_hud,418,6,1,1
@@ -14209,7 +14131,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 34,trotthet,109,2,1,0
 34,trotthet,160,2,0,0
 34,trotthet,287,5,1,0
-34,trotthet,294,2,0,0
 34,trotthet,173,6,1,0
 34,trotthet,235,6,1,1
 34,trotthet,192,6,0,1
@@ -14420,7 +14341,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 34,halsa,138,4,0,0
 34,halsa,244,6,1,1
 34,halsa,214,6,1,1
-34,halsa,294,3,0,0
 34,halsa,151,4,1,0
 34,halsa,176,5,1,1
 34,halsa,270,6,0,1
@@ -14547,7 +14467,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 34,blek_hud,292,5,1,1
 34,blek_hud,125,5,1,1
 34,blek_hud,253,4,1,0
-34,blek_hud,294,4,0,0
 34,blek_hud,281,5,0,1
 34,blek_hud,249,6,1,0
 34,blek_hud,205,5,0,1
@@ -14668,7 +14587,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 32,halsa,195,3,1,0
 32,halsa,143,4,0,1
 32,halsa,165,4,0,0
-32,halsa,294,2,0,0
 32,halsa,108,4,1,1
 32,halsa,289,3,0,0
 32,halsa,229,4,0,0
@@ -14882,7 +14800,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 32,trotthet,106,4,1,1
 32,trotthet,223,4,0,0
 32,trotthet,126,3,1,1
-32,trotthet,294,2,0,0
 32,trotthet,270,3,0,1
 32,trotthet,163,4,1,0
 32,trotthet,252,5,0,1
@@ -15090,7 +15007,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 32,blek_hud,161,5,0,0
 32,blek_hud,245,5,0,1
 32,blek_hud,573,2,1,0
-32,blek_hud,294,5,0,0
 32,blek_hud,211,5,1,1
 32,blek_hud,146,6,1,1
 32,blek_hud,214,3,1,1
@@ -15321,7 +15237,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 31,trotthet,146,4,1,1
 31,trotthet,256,2,0,1
 31,trotthet,245,2,0,1
-31,trotthet,294,1,0,0
 31,trotthet,235,2,1,1
 31,trotthet,417,2,1,1
 31,trotthet,187,3,0,0
@@ -15441,7 +15356,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 31,halsa,264,5,0,1
 31,halsa,187,5,0,0
 31,halsa,239,3,0,1
-31,halsa,294,3,0,0
 31,halsa,278,7,0,0
 31,halsa,276,4,0,0
 31,halsa,288,4,1,0
@@ -15529,7 +15443,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 31,blek_hud,236,5,1,1
 31,blek_hud,185,4,1,0
 31,blek_hud,198,4,1,0
-31,blek_hud,294,3,0,0
 31,blek_hud,178,5,1,1
 31,blek_hud,291,3,1,1
 31,blek_hud,245,5,0,1
@@ -15730,7 +15643,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 30,trotthet,285,6,0,0
 30,trotthet,185,5,1,0
 30,trotthet,107,6,1,1
-30,trotthet,294,3,0,0
 30,trotthet,243,6,1,1
 30,trotthet,240,5,0,1
 30,trotthet,293,2,0,0
@@ -16039,7 +15951,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 30,halsa,174,2,1,1
 30,halsa,135,2,1,1
 30,halsa,235,1,1,1
-30,halsa,294,2,0,0
 30,halsa,425,4,1,1
 30,halsa,201,7,1,0
 30,halsa,196,7,1,0
@@ -16092,7 +16003,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 30,blek_hud,127,6,1,1
 30,blek_hud,112,5,1,0
 30,blek_hud,108,5,1,1
-30,blek_hud,294,1,0,0
 30,blek_hud,216,3,1,0
 30,blek_hud,220,4,0,0
 30,blek_hud,290,5,0,1
@@ -16322,7 +16232,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 29,halsa,138,5,0,0
 29,halsa,174,4,1,1
 29,halsa,203,4,1,1
-29,halsa,294,4,0,0
 29,halsa,168,4,0,0
 29,halsa,431,4,1,0
 29,halsa,107,4,1,1
@@ -16515,7 +16424,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 29,trotthet,268,3,0,0
 29,trotthet,180,3,1,0
 29,trotthet,240,3,0,1
-29,trotthet,294,2,0,0
 29,trotthet,153,3,1,1
 29,trotthet,203,5,1,1
 29,trotthet,143,3,0,1
@@ -16733,7 +16641,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 29,blek_hud,205,4,0,1
 29,blek_hud,267,6,0,0
 29,blek_hud,291,5,1,1
-29,blek_hud,294,5,0,0
 29,blek_hud,255,5,0,0
 29,blek_hud,197,5,1,0
 29,blek_hud,226,4,1,1
@@ -16932,7 +16839,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 28,trotthet,244,6,1,1
 28,trotthet,282,3,0,0
 28,trotthet,149,5,1,0
-28,trotthet,294,1,0,0
 28,trotthet,292,3,1,1
 28,trotthet,111,6,1,1
 28,trotthet,138,2,0,0
@@ -17113,7 +17019,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 28,halsa,135,6,1,1
 28,halsa,218,5,1,1
 28,halsa,186,7,1,0
-28,halsa,294,3,0,0
 28,halsa,256,4,0,1
 28,halsa,203,6,1,1
 28,halsa,102,5,1,0
@@ -17284,7 +17189,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 28,blek_hud,185,1,1,0
 28,blek_hud,291,3,1,1
 28,blek_hud,263,6,0,1
-28,blek_hud,294,2,0,0
 28,blek_hud,140,5,1,0
 28,blek_hud,247,4,0,1
 28,blek_hud,153,1,1,1
@@ -17494,7 +17398,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 25,trotthet,270,2,0,1
 25,trotthet,143,4,0,1
 25,trotthet,181,5,1,0
-25,trotthet,294,2,0,0
 25,trotthet,278,7,0,0
 25,trotthet,129,4,1,0
 25,trotthet,189,1,0,1
@@ -17631,7 +17534,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 25,halsa,244,6,1,1
 25,halsa,140,5,1,0
 25,halsa,135,6,1,1
-25,halsa,294,4,0,0
 25,halsa,136,5,1,1
 25,halsa,181,4,1,0
 25,halsa,249,5,1,0
@@ -17786,7 +17688,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 25,blek_hud,215,2,1,0
 25,blek_hud,206,5,0,1
 25,blek_hud,146,2,1,1
-25,blek_hud,294,4,0,0
 25,blek_hud,194,5,1,1
 25,blek_hud,177,6,1,1
 25,blek_hud,253,6,1,0
@@ -17971,7 +17872,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 23,trotthet,226,6,1,1
 23,trotthet,242,3,0,0
 23,trotthet,232,6,1,1
-23,trotthet,294,1,0,0
 23,trotthet,212,6,1,1
 23,trotthet,195,4,1,0
 23,trotthet,221,5,1,1
@@ -18162,7 +18062,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 23,halsa,249,6,1,0
 23,halsa,136,7,1,1
 23,halsa,167,7,0,1
-23,halsa,294,3,0,0
 23,halsa,256,4,0,1
 23,halsa,215,5,1,0
 23,halsa,263,6,0,1
@@ -18396,7 +18295,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 23,blek_hud,246,6,0,0
 23,blek_hud,162,6,0,0
 23,blek_hud,254,3,1,0
-23,blek_hud,294,1,0,0
 23,blek_hud,258,5,0,0
 23,blek_hud,143,5,0,1
 23,blek_hud,270,6,0,1
@@ -18511,7 +18409,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 20,trotthet,175,1,1,1
 20,trotthet,173,5,1,0
 20,trotthet,181,3,1,0
-20,trotthet,294,1,0,0
 20,trotthet,271,4,0,1
 20,trotthet,116,4,0,1
 20,trotthet,131,4,1,1
@@ -18741,7 +18638,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 20,halsa,147,4,1,1
 20,halsa,124,4,0,1
 20,halsa,132,5,1,0
-20,halsa,294,2,0,0
 20,halsa,183,4,0,0
 20,halsa,256,4,0,1
 20,halsa,173,5,1,0
@@ -18900,7 +18796,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 20,blek_hud,198,3,1,0
 20,blek_hud,230,4,0,0
 20,blek_hud,210,5,1,0
-20,blek_hud,294,6,0,0
 20,blek_hud,183,4,0,0
 20,blek_hud,222,4,1,1
 20,blek_hud,109,3,1,0
@@ -18996,7 +18891,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 19,trotthet,289,2,0,0
 19,trotthet,107,5,1,1
 19,trotthet,285,5,0,0
-19,trotthet,294,2,0,0
 19,trotthet,144,4,0,1
 19,trotthet,166,2,0,1
 19,trotthet,245,3,0,1
@@ -19199,7 +19093,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 19,halsa,213,3,1,1
 19,halsa,238,3,1,0
 19,halsa,196,3,1,0
-19,halsa,294,3,0,0
 19,halsa,161,3,0,0
 19,halsa,159,3,0,0
 19,halsa,183,3,0,0
@@ -19426,7 +19319,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 19,blek_hud,177,3,1,1
 19,blek_hud,143,3,0,1
 19,blek_hud,131,3,1,1
-19,blek_hud,294,4,0,0
 19,blek_hud,121,4,1,0
 19,blek_hud,127,2,1,1
 19,blek_hud,106,3,1,1
@@ -19557,7 +19449,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 18,halsa,577,7,0,0
 18,halsa,306,4,0,0
 18,halsa,268,7,0,0
-18,halsa,294,1,0,0
 18,halsa,108,3,1,1
 18,halsa,201,5,1,0
 18,halsa,189,4,0,1
@@ -19702,7 +19593,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 18,trotthet,209,4,1,0
 18,trotthet,257,4,0,1
 18,trotthet,102,2,1,0
-18,trotthet,294,1,0,0
 18,trotthet,218,1,1,1
 18,trotthet,156,4,1,0
 18,trotthet,186,7,1,0
@@ -19969,7 +19859,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 18,blek_hud,242,6,0,0
 18,blek_hud,181,3,1,0
 18,blek_hud,131,6,1,1
-18,blek_hud,294,5,0,0
 18,blek_hud,207,5,1,0
 18,blek_hud,202,5,1,0
 18,blek_hud,291,3,1,1
@@ -20050,7 +19939,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 16,halsa,123,6,0,1
 16,halsa,213,5,1,1
 16,halsa,263,6,0,1
-16,halsa,294,4,0,0
 16,halsa,293,4,0,0
 16,halsa,217,5,1,1
 16,halsa,192,5,0,1
@@ -20364,7 +20252,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 16,trotthet,198,3,1,0
 16,trotthet,172,5,0,1
 16,trotthet,266,5,0,1
-16,trotthet,294,4,0,0
 16,trotthet,275,3,0,1
 16,trotthet,301,4,0,1
 16,trotthet,417,3,1,1
@@ -20436,7 +20323,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 16,blek_hud,125,5,1,1
 16,blek_hud,187,5,0,0
 16,blek_hud,205,5,0,1
-16,blek_hud,294,5,0,0
 16,blek_hud,292,5,1,1
 16,blek_hud,151,5,1,0
 16,blek_hud,134,7,1,0
@@ -20711,7 +20597,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 15,trotthet,175,5,1,1
 15,trotthet,259,6,0,1
 15,trotthet,254,6,1,0
-15,trotthet,294,3,0,0
 15,trotthet,117,5,0,0
 15,trotthet,187,6,0,0
 15,trotthet,102,6,1,0
@@ -20897,7 +20782,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 15,halsa,256,5,0,1
 15,halsa,180,5,1,0
 15,halsa,117,6,0,0
-15,halsa,294,5,0,0
 15,halsa,213,5,1,1
 15,halsa,181,6,1,0
 15,halsa,236,6,1,1
@@ -21056,7 +20940,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 15,blek_hud,159,2,0,0
 15,blek_hud,143,3,0,1
 15,blek_hud,104,3,1,0
-15,blek_hud,294,6,0,0
 15,blek_hud,153,3,1,1
 15,blek_hud,221,1,1,1
 15,blek_hud,272,2,0,1
@@ -21268,7 +21151,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 14,trotthet,160,2,0,0
 14,trotthet,247,2,0,1
 14,trotthet,173,3,1,0
-14,trotthet,294,1,0,0
 14,trotthet,298,3,0,1
 14,trotthet,238,3,1,0
 14,trotthet,306,4,0,0
@@ -21327,7 +21209,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 14,halsa,259,4,0,1
 14,halsa,266,5,0,1
 14,halsa,293,3,0,0
-14,halsa,294,3,0,0
 14,halsa,133,3,1,0
 14,halsa,191,5,0,0
 14,halsa,573,6,1,0
@@ -21533,7 +21414,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 14,blek_hud,211,2,1,1
 14,blek_hud,204,1,1,0
 14,blek_hud,215,7,1,0
-14,blek_hud,294,4,0,0
 14,blek_hud,269,2,0,0
 14,blek_hud,246,6,0,0
 14,blek_hud,172,2,0,1
@@ -21700,7 +21580,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 13,halsa,196,3,1,0
 13,halsa,224,3,0,0
 13,halsa,215,4,1,0
-13,halsa,294,3,0,0
 13,halsa,266,5,0,1
 13,halsa,431,4,1,0
 13,halsa,271,5,0,1
@@ -21999,7 +21878,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 13,trotthet,247,3,0,1
 13,trotthet,258,4,0,0
 13,trotthet,111,2,1,1
-13,trotthet,294,2,0,0
 13,trotthet,132,5,1,0
 13,trotthet,115,2,0,1
 13,trotthet,131,3,1,1
@@ -22066,7 +21944,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 13,blek_hud,285,4,0,0
 13,blek_hud,155,3,1,0
 13,blek_hud,103,6,1,0
-13,blek_hud,294,5,0,0
 13,blek_hud,145,2,1,1
 13,blek_hud,175,4,1,1
 13,blek_hud,258,3,0,0
@@ -22378,7 +22255,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 11,trotthet,102,4,1,0
 11,trotthet,124,2,0,1
 11,trotthet,214,3,1,1
-11,trotthet,294,1,0,0
 11,trotthet,173,4,1,0
 11,trotthet,152,5,1,1
 11,trotthet,257,3,0,1
@@ -22430,7 +22306,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 11,halsa,151,4,1,0
 11,halsa,178,5,1,1
 11,halsa,111,4,1,1
-11,halsa,294,2,0,0
 11,halsa,218,3,1,1
 11,halsa,249,2,1,0
 11,halsa,240,5,0,1
@@ -22592,7 +22467,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 11,blek_hud,288,3,1,0
 11,blek_hud,177,3,1,1
 11,blek_hud,243,4,1,1
-11,blek_hud,294,1,0,0
 11,blek_hud,431,4,1,0
 11,blek_hud,106,4,1,1
 11,blek_hud,186,2,1,0
@@ -22908,7 +22782,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 10,trotthet,286,2,0,1
 10,trotthet,140,5,1,0
 10,trotthet,160,4,0,0
-10,trotthet,294,2,0,0
 10,trotthet,144,3,0,1
 10,trotthet,138,2,0,0
 10,trotthet,255,5,0,0
@@ -22976,7 +22849,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 10,halsa,230,2,0,0
 10,halsa,127,2,1,1
 10,halsa,212,4,1,1
-10,halsa,294,2,0,0
 10,halsa,120,3,1,1
 10,halsa,101,6,1,0
 10,halsa,232,4,1,1
@@ -23180,7 +23052,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 10,blek_hud,205,2,0,1
 10,blek_hud,137,3,0,0
 10,blek_hud,131,2,1,1
-10,blek_hud,294,4,0,0
 10,blek_hud,127,1,1,1
 10,blek_hud,265,1,0,1
 10,blek_hud,108,2,1,1
@@ -23382,7 +23253,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 9,trotthet,291,4,1,1
 9,trotthet,175,3,1,1
 9,trotthet,258,4,0,0
-9,trotthet,294,2,0,0
 9,trotthet,228,5,1,1
 9,trotthet,145,5,1,1
 9,trotthet,185,5,1,0
@@ -23493,7 +23363,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 9,halsa,212,4,1,1
 9,halsa,109,4,1,0
 9,halsa,577,4,0,0
-9,halsa,294,3,0,0
 9,halsa,159,3,0,0
 9,halsa,206,5,0,1
 9,halsa,253,3,1,0
@@ -23772,7 +23641,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 9,blek_hud,120,7,1,1
 9,blek_hud,577,6,0,0
 9,blek_hud,431,6,1,0
-9,blek_hud,294,7,0,0
 9,blek_hud,209,7,1,0
 9,blek_hud,220,6,0,0
 9,blek_hud,214,6,1,1
@@ -23839,7 +23707,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 8,halsa,103,4,1,0
 8,halsa,290,3,0,1
 8,halsa,134,3,1,0
-8,halsa,294,2,0,0
 8,halsa,267,4,0,0
 8,halsa,235,4,1,1
 8,halsa,184,5,0,0
@@ -24020,7 +23887,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 8,trotthet,451,2,0,0
 8,trotthet,256,3,0,1
 8,trotthet,289,3,0,0
-8,trotthet,294,3,0,0
 8,trotthet,280,2,1,0
 8,trotthet,268,5,0,0
 8,trotthet,573,7,1,0
@@ -24201,7 +24067,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 8,blek_hud,431,5,1,0
 8,blek_hud,292,4,1,1
 8,blek_hud,117,5,0,0
-8,blek_hud,294,6,0,0
 8,blek_hud,105,4,1,1
 8,blek_hud,151,5,1,0
 8,blek_hud,162,4,0,0
@@ -24491,7 +24356,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 7,halsa,245,3,0,1
 7,halsa,216,4,1,0
 7,halsa,104,5,1,0
-7,halsa,294,3,0,0
 7,halsa,297,3,0,1
 7,halsa,153,3,1,1
 7,halsa,144,3,0,1
@@ -24557,7 +24421,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 7,trotthet,286,3,0,1
 7,trotthet,278,5,0,0
 7,trotthet,152,3,1,1
-7,trotthet,294,1,0,0
 7,trotthet,207,3,1,0
 7,trotthet,107,4,1,1
 7,trotthet,573,5,1,0
@@ -24850,7 +24713,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 7,blek_hud,109,4,1,0
 7,blek_hud,140,5,1,0
 7,blek_hud,213,4,1,1
-7,blek_hud,294,6,0,0
 7,blek_hud,196,4,1,0
 7,blek_hud,268,4,0,0
 7,blek_hud,153,4,1,1
@@ -25064,7 +24926,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 6,trotthet,123,4,0,1
 6,trotthet,230,2,0,0
 6,trotthet,126,5,1,1
-6,trotthet,294,2,0,0
 6,trotthet,267,5,0,0
 6,trotthet,183,6,0,0
 6,trotthet,108,5,1,1
@@ -25202,7 +25063,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 6,halsa,238,5,1,0
 6,halsa,105,5,1,1
 6,halsa,153,6,1,1
-6,halsa,294,3,0,0
 6,halsa,115,3,0,1
 6,halsa,189,4,0,1
 6,halsa,126,5,1,1
@@ -25432,7 +25292,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 6,blek_hud,193,5,1,1
 6,blek_hud,248,4,0,1
 6,blek_hud,451,4,0,0
-6,blek_hud,294,5,0,0
 6,blek_hud,216,5,1,0
 6,blek_hud,196,4,1,0
 6,blek_hud,104,2,1,0
@@ -25507,7 +25366,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 5,trotthet,244,5,1,1
 5,trotthet,195,3,1,0
 5,trotthet,254,5,1,0
-5,trotthet,294,1,0,0
 5,trotthet,258,3,0,0
 5,trotthet,128,5,1,0
 5,trotthet,306,5,0,0
@@ -25653,7 +25511,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 5,halsa,182,3,1,1
 5,halsa,205,3,0,1
 5,halsa,218,4,1,1
-5,halsa,294,2,0,0
 5,halsa,121,3,1,0
 5,halsa,117,2,0,0
 5,halsa,181,2,1,0
@@ -25910,7 +25767,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 5,blek_hud,215,7,1,0
 5,blek_hud,204,6,1,0
 5,blek_hud,144,6,0,1
-5,blek_hud,294,1,0,0
 5,blek_hud,305,6,0,0
 5,blek_hud,184,5,0,0
 5,blek_hud,240,5,0,1
@@ -26111,7 +25967,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 60,halsa,252,3,0,1
 60,halsa,305,5,0,0
 60,halsa,301,6,0,1
-60,halsa,294,4,0,0
 60,halsa,205,4,0,1
 60,halsa,145,4,1,1
 60,halsa,115,2,0,1
@@ -26352,7 +26207,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 60,trotthet,306,4,0,0
 60,trotthet,418,4,1,1
 60,trotthet,275,5,0,1
-60,trotthet,294,3,0,0
 60,trotthet,210,5,1,0
 60,trotthet,246,4,0,0
 60,trotthet,425,3,1,1
@@ -26384,7 +26238,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 60,blek_hud,174,6,1,1
 60,blek_hud,145,6,1,1
 60,blek_hud,116,6,0,1
-60,blek_hud,294,6,0,0
 60,blek_hud,123,7,0,1
 60,blek_hud,110,5,1,1
 60,blek_hud,252,6,0,1
@@ -26669,7 +26522,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 58,trotthet,195,4,1,0
 58,trotthet,244,4,1,1
 58,trotthet,276,5,0,0
-58,trotthet,294,5,0,0
 58,trotthet,269,7,0,0
 58,trotthet,112,5,1,0
 58,trotthet,302,5,0,1
@@ -26860,7 +26712,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 58,halsa,418,4,1,1
 58,halsa,151,7,1,0
 58,halsa,123,6,0,1
-58,halsa,294,5,0,0
 58,halsa,451,2,0,0
 58,halsa,167,2,0,1
 58,halsa,111,4,1,1
@@ -27076,7 +26927,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 58,blek_hud,202,5,1,0
 58,blek_hud,132,4,1,0
 58,blek_hud,235,4,1,1
-58,blek_hud,294,3,0,0
 58,blek_hud,215,4,1,0
 58,blek_hud,130,5,1,1
 58,blek_hud,218,3,1,1
@@ -27118,7 +26968,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 56,trotthet,279,5,1,1
 56,trotthet,266,4,0,1
 56,trotthet,140,5,1,0
-56,trotthet,294,3,0,0
 56,trotthet,247,3,0,1
 56,trotthet,145,5,1,1
 56,trotthet,168,5,0,0
@@ -27353,7 +27202,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 56,halsa,252,5,0,1
 56,halsa,238,4,1,0
 56,halsa,145,5,1,1
-56,halsa,294,4,0,0
 56,halsa,130,4,1,1
 56,halsa,208,5,1,0
 56,halsa,186,6,1,0
@@ -27515,7 +27363,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 56,blek_hud,425,5,1,1
 56,blek_hud,279,2,1,1
 56,blek_hud,259,5,0,1
-56,blek_hud,294,3,0,0
 56,blek_hud,451,4,0,0
 56,blek_hud,573,2,1,0
 56,blek_hud,226,4,1,1
@@ -27657,7 +27504,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 51,halsa,139,5,1,0
 51,halsa,219,3,0,0
 51,halsa,228,6,1,1
-51,halsa,294,3,0,0
 51,halsa,268,3,0,0
 51,halsa,122,2,1,1
 51,halsa,267,3,0,0
@@ -27913,7 +27759,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 51,trotthet,210,6,1,0
 51,trotthet,105,6,1,1
 51,trotthet,252,5,0,1
-51,trotthet,294,2,0,0
 51,trotthet,255,3,0,0
 51,trotthet,293,2,0,0
 51,trotthet,137,3,0,0
@@ -27999,7 +27844,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 51,blek_hud,183,5,0,0
 51,blek_hud,206,3,0,1
 51,blek_hud,451,3,0,0
-51,blek_hud,294,2,0,0
 51,blek_hud,235,4,1,1
 51,blek_hud,159,3,0,0
 51,blek_hud,301,4,0,1
@@ -28285,7 +28129,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 41,halsa,255,6,0,0
 41,halsa,174,3,1,1
 41,halsa,451,3,0,0
-41,halsa,294,3,0,0
 41,halsa,280,4,1,0
 41,halsa,285,5,0,0
 41,halsa,193,6,1,1
@@ -28402,7 +28245,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 41,trotthet,192,6,0,1
 41,trotthet,198,5,1,0
 41,trotthet,252,5,0,1
-41,trotthet,294,2,0,0
 41,trotthet,292,2,1,1
 41,trotthet,216,4,1,0
 41,trotthet,185,4,1,0
@@ -28697,7 +28539,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 41,blek_hud,133,5,1,0
 41,blek_hud,180,3,1,0
 41,blek_hud,193,3,1,1
-41,blek_hud,294,5,0,0
 41,blek_hud,289,4,0,0
 41,blek_hud,280,5,1,0
 41,blek_hud,259,6,0,1
@@ -28774,7 +28615,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 39,halsa,134,5,1,0
 39,halsa,417,5,1,1
 39,halsa,217,6,1,1
-39,halsa,294,5,0,0
 39,halsa,172,6,0,1
 39,halsa,258,5,0,0
 39,halsa,197,5,1,0
@@ -28999,7 +28839,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 39,trotthet,270,4,0,1
 39,trotthet,180,4,1,0
 39,trotthet,174,4,1,1
-39,trotthet,294,2,0,0
 39,trotthet,115,3,0,1
 39,trotthet,269,5,0,0
 39,trotthet,266,5,0,1
@@ -29101,7 +28940,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 39,blek_hud,286,5,0,1
 39,blek_hud,220,4,0,0
 39,blek_hud,176,5,1,1
-39,blek_hud,294,6,0,0
 39,blek_hud,279,5,1,1
 39,blek_hud,156,5,1,0
 39,blek_hud,117,5,0,0
@@ -29372,7 +29210,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 35,halsa,211,4,1,1
 35,halsa,132,4,1,0
 35,halsa,291,4,1,1
-35,halsa,294,3,0,0
 35,halsa,218,4,1,1
 35,halsa,417,3,1,1
 35,halsa,253,3,1,0
@@ -29522,7 +29359,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 35,trotthet,211,5,1,1
 35,trotthet,233,5,1,1
 35,trotthet,280,4,1,0
-35,trotthet,294,2,0,0
 35,trotthet,260,3,0,0
 35,trotthet,248,4,0,1
 35,trotthet,117,5,0,0
@@ -29678,7 +29514,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 35,blek_hud,290,6,0,1
 35,blek_hud,127,4,1,1
 35,blek_hud,163,5,1,0
-35,blek_hud,294,2,0,0
 35,blek_hud,168,5,0,0
 35,blek_hud,280,6,1,0
 35,blek_hud,215,7,1,0
@@ -29904,7 +29739,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 33,trotthet,137,5,0,0
 33,trotthet,139,3,1,0
 33,trotthet,180,3,1,0
-33,trotthet,294,3,0,0
 33,trotthet,239,4,0,1
 33,trotthet,418,3,1,1
 33,trotthet,145,3,1,1
@@ -30091,7 +29925,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 33,halsa,109,4,1,0
 33,halsa,202,3,1,0
 33,halsa,260,4,0,0
-33,halsa,294,4,0,0
 33,halsa,290,3,0,1
 33,halsa,275,4,0,1
 33,halsa,217,4,1,1
@@ -30221,7 +30054,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 33,blek_hud,130,6,1,1
 33,blek_hud,194,6,1,1
 33,blek_hud,149,5,1,0
-33,blek_hud,294,6,0,0
 33,blek_hud,184,6,0,0
 33,blek_hud,242,6,0,0
 33,blek_hud,183,6,0,0
@@ -30439,7 +30271,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 24,halsa,239,7,0,1
 24,halsa,235,2,1,1
 24,halsa,116,6,0,1
-24,halsa,294,3,0,0
 24,halsa,190,6,0,1
 24,halsa,106,5,1,1
 24,halsa,122,6,1,1
@@ -30546,7 +30377,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 24,trotthet,247,6,0,1
 24,trotthet,249,3,1,0
 24,trotthet,212,5,1,1
-24,trotthet,294,2,0,0
 24,trotthet,259,3,0,1
 24,trotthet,208,4,1,0
 24,trotthet,242,5,0,0
@@ -30775,7 +30605,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 24,blek_hud,249,5,1,0
 24,blek_hud,160,4,0,0
 24,blek_hud,232,6,1,1
-24,blek_hud,294,5,0,0
 24,blek_hud,182,1,1,1
 24,blek_hud,161,3,0,0
 24,blek_hud,116,1,0,1
@@ -31000,7 +30829,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 21,halsa,220,2,0,0
 21,halsa,160,3,0,0
 21,halsa,115,2,0,1
-21,halsa,294,2,0,0
 21,halsa,268,4,0,0
 21,halsa,577,4,0,0
 21,halsa,215,3,1,0
@@ -31206,7 +31034,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 21,trotthet,176,4,1,1
 21,trotthet,154,3,1,0
 21,trotthet,223,2,0,0
-21,trotthet,294,1,0,0
 21,trotthet,232,3,1,1
 21,trotthet,188,4,0,0
 21,trotthet,174,3,1,1
@@ -31295,7 +31122,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 21,blek_hud,268,1,0,0
 21,blek_hud,243,1,1,1
 21,blek_hud,451,2,0,0
-21,blek_hud,294,5,0,0
 21,blek_hud,102,5,1,0
 21,blek_hud,255,5,0,0
 21,blek_hud,177,3,1,1
@@ -31588,7 +31414,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 12,trotthet,155,5,1,0
 12,trotthet,131,5,1,1
 12,trotthet,418,5,1,1
-12,trotthet,294,4,0,0
 12,trotthet,178,4,1,1
 12,trotthet,184,5,0,0
 12,trotthet,246,3,0,0
@@ -31757,7 +31582,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 12,halsa,222,5,1,1
 12,halsa,189,2,0,1
 12,halsa,298,5,0,1
-12,halsa,294,4,0,0
 12,halsa,147,4,1,1
 12,halsa,286,4,0,1
 12,halsa,254,6,1,0
@@ -31781,7 +31605,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 12,blek_hud,209,5,1,0
 12,blek_hud,302,2,0,1
 12,blek_hud,288,5,1,0
-12,blek_hud,294,2,0,0
 12,blek_hud,573,5,1,0
 12,blek_hud,265,5,0,1
 12,blek_hud,228,3,1,1
@@ -31980,7 +31803,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 4,trotthet,242,3,0,0
 4,trotthet,183,6,0,0
 4,trotthet,232,5,1,1
-4,trotthet,294,3,0,0
 4,trotthet,285,3,0,0
 4,trotthet,180,3,1,0
 4,trotthet,115,2,0,1
@@ -32179,7 +32001,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 4,halsa,249,3,1,0
 4,halsa,130,4,1,1
 4,halsa,302,5,0,1
-4,halsa,294,4,0,0
 4,halsa,172,6,0,1
 4,halsa,210,3,1,0
 4,halsa,152,4,1,1
@@ -32343,7 +32164,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 4,blek_hud,243,5,1,1
 4,blek_hud,287,5,1,0
 4,blek_hud,271,4,0,1
-4,blek_hud,294,2,0,0
 4,blek_hud,573,4,1,0
 4,blek_hud,264,4,0,1
 4,blek_hud,256,5,0,1
@@ -32663,7 +32483,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 3,trotthet,243,6,1,1
 3,trotthet,123,7,0,1
 3,trotthet,223,5,0,0
-3,trotthet,294,3,0,0
 3,trotthet,128,7,1,0
 3,trotthet,221,4,1,1
 3,trotthet,291,6,1,1
@@ -32696,7 +32515,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 3,halsa,274,6,1,0
 3,halsa,201,6,1,0
 3,halsa,236,6,1,1
-3,halsa,294,5,0,0
 3,halsa,220,6,0,0
 3,halsa,194,6,1,1
 3,halsa,191,7,0,0
@@ -32964,7 +32782,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 3,blek_hud,221,6,1,1
 3,blek_hud,233,3,1,1
 3,blek_hud,209,7,1,0
-3,blek_hud,294,2,0,0
 3,blek_hud,292,7,1,1
 3,blek_hud,139,6,1,0
 3,blek_hud,236,7,1,1
@@ -33217,7 +33034,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 2,trotthet,205,4,0,1
 2,trotthet,130,5,1,1
 2,trotthet,147,5,1,1
-2,trotthet,294,2,0,0
 2,trotthet,254,4,1,0
 2,trotthet,253,4,1,0
 2,trotthet,271,4,0,1
@@ -33296,7 +33112,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 2,halsa,189,3,0,1
 2,halsa,173,5,1,0
 2,halsa,223,4,0,0
-2,halsa,294,4,0,0
 2,halsa,259,5,0,1
 2,halsa,194,3,1,1
 2,halsa,577,3,0,0
@@ -33443,7 +33258,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 2,blek_hud,274,4,1,0
 2,blek_hud,238,3,1,0
 2,blek_hud,167,4,0,1
-2,blek_hud,294,2,0,0
 2,blek_hud,152,4,1,1
 2,blek_hud,245,3,0,1
 2,blek_hud,287,5,1,0
@@ -33640,7 +33454,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 1,halsa,165,5,0,0
 1,halsa,451,3,0,0
 1,halsa,221,2,1,1
-1,halsa,294,2,0,0
 1,halsa,177,3,1,1
 1,halsa,293,2,0,0
 1,halsa,209,5,1,0
@@ -33906,7 +33719,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 1,trotthet,236,4,1,1
 1,trotthet,293,2,0,0
 1,trotthet,128,6,1,0
-1,trotthet,294,2,0,0
 1,trotthet,149,3,1,0
 1,trotthet,274,6,1,0
 1,trotthet,130,5,1,1
@@ -34110,7 +33922,6 @@ Rater_ID,Question,Face_ID,Response,Face_Woman,Face_SD
 1,blek_hud,249,3,1,0
 1,blek_hud,242,6,0,0
 1,blek_hud,203,2,1,1
-1,blek_hud,294,2,0,0
 1,blek_hud,207,5,1,0
 1,blek_hud,125,4,1,1
 1,blek_hud,573,3,1,0

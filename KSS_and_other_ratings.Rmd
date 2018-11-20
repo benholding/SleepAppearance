@@ -30,6 +30,7 @@ Importing dataset
 photoRatings_Completedata <- read.csv("photo_ratings.csv")
 ID_KSS_data <-  read.csv("Face_SD_KSS.csv")
 KSS_other_ratings_data <- left_join(photoRatings_Completedata, rename(ID_KSS_data, Face_ID = ID))
+
 KSS_other_ratings_data$KSS_scaled <- as.numeric(psych::rescale(KSS_other_ratings_data$KSS, mean = 0, sd = 0.25, df =F))
 
 KSSphotoRatings_health <- KSS_other_ratings_data %>% filter(Question == "halsa")
