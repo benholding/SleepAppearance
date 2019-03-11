@@ -25,13 +25,16 @@ set.seed(556644)
 Import data
 ```{r}
 KSS_facialfeatures_data <- inner_join(read_sav("face_Analysis_data.sav"), read.csv("Face_SD_KSS.csv"))
-
+KSS_facialfeatures_data %>% group_by(sleep_deprived) %>% summarise_at(vars(KSS), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
 
 KSS_facialfeatures_data$KSS_scaled <- psych::rescale(KSS_facialfeatures_data$KSS, mean = 0, sd = 0.25, df =F)
 
+KSS_periorbital <- inner_join(read.csv("foreheadMinusPeriorbital.csv"), read.csv("Face_SD_KSS.csv"))
+KSS_periorbital$SD <- as.factor(KSS_periorbital$SD)
+KSS_periorbital$KSS_scaled <- psych::rescale(KSS_periorbital$KSS, mean = 0, sd = 0.25, df =F)
+
 ```
 
-### this chunk need still to be changed from sleepDep to KSS
 ```{r}
 KSS_smile_prior <- prior(normal(0,0.04947595), class = "b")
 
@@ -71,4 +74,27 @@ equi_test(KSS_eyeDroop.model, eff_size = 0.2, out = "plot")
 equi_test(KSS_eyeDroop.model, eff_size = 0.2)
 
 mcmc.pval(as.mcmc(KSS_eyeDroop.model,"b_KSS_scaled", combine_chains = T))
+
+
+#model 3. Periorbital light/darkness
+diff(range(KSS_periorbital$Average_L)) # =18.94591
+ 18.94591*0.25#quarter of max possible effect #4.736478
+ 
+KSS_periorbital_prior <- prior(normal(0,4.736478), class = "b")
+
+KSS_periorbital.model <- brm(Average_L ~ KSS_scaled, 
+                       data=KSS_periorbital, 
+                       cores = 4,
+                       chains = 15,
+                       iter = 750,
+                       warmup = 500,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = KSS_periorbital_prior)
+
+marginal_effects(KSS_periorbital.model, "KSS_scaled")
+equi_test(KSS_periorbital.model, eff_size = 0.2, out = "plot")
+equi_test(KSS_periorbital.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(KSS_periorbital.model,"b_KSS_scaled", combine_chains = T))
 ```

@@ -23,7 +23,6 @@ set.seed(556644)
 ```
 
 Importing dataset
-* original multilevel dataset (not perrett one)
 * split into 3 seperate data-sets
 ```{r}
 photoRatings_Completedata <- read.csv("photo_ratings.csv")
@@ -80,14 +79,11 @@ fatigue.model <- brm(Response_reverse ~ Face_SD + (Face_SD|Rater_ID) + (1|Face_I
                        sample_prior = T) #summary statistics are on the latent scale
 marginal_effects(fatigue.model, "Face_SD") #see marginal effects
 marginal_effects(fatigue.model, "Face_SD", ordinal = T) #see marginal effects
-equi_test(fatigue.model, rope = c(-0.2844374, 0.2844374)) #hypothesis testing ( .2 SD of the dependent variable around zero)
+equi_test(fatigue.model, rope = c(-sd(photoRatings_fatigue_new$Response_reverse)*0.2, sd(photoRatings_fatigue_new$Response_reverse)*0.2)) #hypothesis testing ( .2 SD of the dependent variable around zero)
 tidy_stan(fatigue.model,prob = 0.95)
 sjstats::hdi(as.mcmc(fatigue.model,"sd_Face_ID__Intercept", combine_chains = T), prob = 0.95)
 sjstats::hdi(as.mcmc(fatigue.model,"sd_Rater_ID__Intercept", combine_chains = T), prob = 0.95)
 sjstats::hdi(as.mcmc(fatigue.model,"sd_Rater_ID__Face_SD1", combine_chains = T), prob = 0.95)
-
-sjstats::hdi(as.mcmc(fatigue.model,"Intercept"[6], combine_chains = T), prob = 0.95)
-
 
 fatigue_SleepdepEffect.mcmc <- as.mcmc(fatigue.model,"b_Face_SD1", combine_chains = T) #combine mcmc chains
 mcmc.pval(fatigue_SleepdepEffect.mcmc)

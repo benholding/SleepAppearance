@@ -51,8 +51,6 @@ correlation_plot <- ggpairs(Spectro_data, columns = c("Lightness", "Redness", "Y
 
 
 ```{r}
-#check what priors are possible:
-
 # set priors on possible effect
 spectro_prior <- prior(normal(0,25), class = "b")
 
@@ -69,11 +67,11 @@ lightness.model <- brm(Lightness ~ SD + Redness_scaled + Yellowness_scaled + (1|
 equi_test(lightness.model, eff_size = 0.2)
 equi_test(lightness.model, eff_size = 0.2, out = "plot")
 mcmc.pval(as.mcmc(lightness.model,"b_Intercept", combine_chains = T))
-mcmc.pval(as.mcmc(lightness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(lightness.model,"b_SDSleepdeprived", combine_chains = T))
 mcmc.pval(as.mcmc(lightness.model,"b_Redness_scaled", combine_chains = T))
 mcmc.pval(as.mcmc(lightness.model,"b_Yellowness_scaled", combine_chains = T))
 
-sjstats::hdi(as.mcmc(lightness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(lightness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95) #Random intercept HDI
 
 ###############
 Redness.model <- brm(Redness ~ SD + Lightness_scaled + Yellowness_scaled + (1|ID), 
@@ -88,11 +86,11 @@ Redness.model <- brm(Redness ~ SD + Lightness_scaled + Yellowness_scaled + (1|ID
 equi_test(Redness.model, eff_size = 0.2)
 equi_test(Redness.model, eff_size = 0.2, out = "plot")
 mcmc.pval(as.mcmc(Redness.model,"b_Intercept", combine_chains = T))
-mcmc.pval(as.mcmc(Redness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(Redness.model,"b_SDSleepdeprived", combine_chains = T))
 mcmc.pval(as.mcmc(Redness.model,"b_Lightness_scaled", combine_chains = T))
 mcmc.pval(as.mcmc(Redness.model,"b_Yellowness_scaled", combine_chains = T))
 
-sjstats::hdi(as.mcmc(Redness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(Redness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95) #Random intercept HDI
 
 ##########
 Yellowness.model <- brm(Yellowness ~ SD + Lightness_scaled + Redness_scaled + (1|ID), 
@@ -108,9 +106,9 @@ equi_test(Yellowness.model, eff_size = 0.2)
 equi_test(Yellowness.model, eff_size = 0.2, out = "plot")
 
 mcmc.pval(as.mcmc(Yellowness.model,"b_Intercept", combine_chains = T))
-mcmc.pval(as.mcmc(Yellowness.model,"b_SD1", combine_chains = T))
+mcmc.pval(as.mcmc(Yellowness.model,"b_SDSleepdeprived", combine_chains = T))
 mcmc.pval(as.mcmc(Yellowness.model,"b_Lightness_scaled", combine_chains = T))
 mcmc.pval(as.mcmc(Yellowness.model,"b_Redness_scaled", combine_chains = T))
 
-sjstats::hdi(as.mcmc(Yellowness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95)
+sjstats::hdi(as.mcmc(Yellowness.model,"sd_ID__Intercept", combine_chains = T), prob = 0.95) #Random intercept HDI
 ```

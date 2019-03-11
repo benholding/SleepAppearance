@@ -1,5 +1,5 @@
 ---
-title: "Sleep deprivatio and facial features"
+title: "Sleep deprivation and facial features"
 output: html_document
 editor_options: 
   chunk_output_type: console
@@ -22,10 +22,13 @@ rstan_options(auto_write = TRUE)
 set.seed(556644)
 ```
 
-Importing dataset
+Importing datasets
 ```{r}
 SleepDep_facialfeatures_data <- read_sav("face_Analysis_data.sav")
 SleepDep_facialfeatures_data$sleep_deprived <- as.factor(SleepDep_facialfeatures_data$sleep_deprived)
+
+SleepDep_periorbital <- read.csv("foreheadMinusPeriorbital.csv")
+SleepDep_periorbital$SD <- as.factor(SleepDep_periorbital$SD)
 ```
 
 Descriptive statistics
@@ -33,6 +36,10 @@ Descriptive statistics
 SleepDep_facialfeatures_data %>%	
   group_by(sleep_deprived) %>%
   summarise_at(vars(Eye_Openness_DP, Smile), funs(mean(., na.rm=TRUE),sd(., na.rm=TRUE)))
+
+SleepDep_periorbital %>%	
+  group_by(SD) %>%
+  summarise_at(vars(Average_L), list(mean = ~mean(., na.rm=TRUE),SDev =~sd(., na.rm=TRUE)))
 ```
 
 ```{r}
@@ -55,6 +62,7 @@ SleepDep_smile.model <- brm(Smile ~ sleep_deprived,
 marginal_effects(SleepDep_smile.model, "sleep_deprived")
 equi_test(SleepDep_smile.model, eff_size = 0.2, out = "plot")
 equi_test(SleepDep_smile.model, eff_size = 0.2)
+
 
 mcmc.pval(as.mcmc(SleepDep_smile.model,"b_sleep_deprived", combine_chains = T))
 
@@ -79,4 +87,27 @@ equi_test(SleepDep_eyeDroop.model, eff_size = 0.2, out = "plot")
 equi_test(SleepDep_eyeDroop.model, eff_size = 0.2)
 
 mcmc.pval(as.mcmc(SleepDep_eyeDroop.model,"b_sleep_deprived", combine_chains = T))
+
+#model 3. Periorbital light/darkness
+diff(range(SleepDep_periorbital$Average_L)) # =
+ 18.94591*0.25#quarter of max possible effect #4.736478
+ 
+SleepDep_periorbital_prior <- prior(normal(0,4.736478), class = "b")
+
+SleepDep_periorbital.model <- brm(Average_L ~ SD, 
+                       data=SleepDep_periorbital, 
+                       cores = 15,
+                       chains = 15,
+                       iter = 750,
+                       warmup = 500,
+                       sample_prior = T,
+                       seed = 556644,
+                       prior = SleepDep_periorbital_prior)
+
+marginal_effects(SleepDep_periorbital.model, "SD")
+equi_test(SleepDep_periorbital.model, eff_size = 0.2, out = "plot")
+equi_test(SleepDep_periorbital.model, eff_size = 0.2)
+
+mcmc.pval(as.mcmc(SleepDep_periorbital.model,"b_SD", combine_chains = T))
+
 ```

@@ -15,7 +15,7 @@ ipak <- function(pkg){
     sapply(pkg, require, character.only = TRUE)
 } #function to see if package is installed. Will download if not, and then opens it.
 
-packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr", "haven")
+packages <- c("tidyverse","ggridges", "brms", "sjstats", "BEST", "rstan", "MCMC.qpcr", "haven", "caret","pscl")
 suppressPackageStartupMessages(ipak(packages))
 rstan_options(auto_write = TRUE)
 
@@ -26,6 +26,14 @@ Importing dataset
 ```{r}
 fatigue_predictors_data <- read_sav("face_Analysis_data.sav")
 fatigue_predictors_data$sleep_deprived <- as.factor(fatigue_predictors_data$sleep_deprived)
+
+mean(inner_join(fatigue_predictors_data[1:2], read.csv("Slesi_ID_Age.csv"))$Age)
+sd(inner_join(fatigue_predictors_data[1:2], read.csv("Slesi_ID_Age.csv"))$Age)
+table(fatigue_predictors_data$sex)
+
+fatigue_predictors_data <- inner_join(fatigue_predictors_data, read.csv("foreheadMinusPeriorbital.csv"))
+
+fatigue_predictors_data$periorbital_scaled <- psych::rescale(fatigue_predictors_data$Average_L, mean = 0, sd = 0.25, df =F)
 fatigue_predictors_data$Eye_Openness_scaled <- psych::rescale(fatigue_predictors_data$Eye_Openness_DP, mean = 0, sd = 0.25, df =F)
 fatigue_predictors_data$Smile_scaled <- psych::rescale(fatigue_predictors_data$Smile, mean = 0, sd = 0.25, df =F)
 fatigue_predictors_data$Face_L_scaled <- psych::rescale(fatigue_predictors_data$Face_L, mean = 0, sd = 0.25, df =F)
@@ -45,10 +53,12 @@ fatigue_predictors_data_new$b_face_a <- fatigue_predictors_data_new$Face_a_scale
 fatigue_predictors_data_new$c_face_b <- fatigue_predictors_data_new$Face_b_scaled
 fatigue_predictors_data_new$d_eye_openness <- fatigue_predictors_data_new$Eye_Openness_scaled
 fatigue_predictors_data_new$e_mouth_curve <- fatigue_predictors_data_new$Smile_scaled
+fatigue_predictors_data_new$f_periorbital_colour <- fatigue_predictors_data_new$periorbital_scaled
 
-fatigue_prediction.model <- brm(fatigue_reverse ~ a_face_L +b_face_a+c_face_b +d_eye_openness+e_mouth_curve, 
+
+fatigue_prediction.model <- brm(fatigue_reverse ~ a_face_L +b_face_a+c_face_b +d_eye_openness+e_mouth_curve+f_periorbital_colour, 
                        data=fatigue_predictors_data_new, 
-                       cores = 15,
+                       cores = 4,
                        chains = 15,
                        iter = 10000,
                        warmup = 1000,
@@ -56,38 +66,78 @@ fatigue_prediction.model <- brm(fatigue_reverse ~ a_face_L +b_face_a+c_face_b +d
                        seed = 556644,
                        prior = fatiguePrediction_prior)
 
-equi_test(tired_prediction.model, 
+
+tempt <- equi_test(fatigue_prediction.model, 
           eff_size = 0.2)
 
-figure <- equi_test(tired_prediction.model, 
+figure <- equi_test(fatigue_prediction.model, 
           eff_size = 0.2, 
           out = "plot",
           rope.color = "red",
           legend.title = "Alternative hypothesis decision",
           x.title = "Unstandardised effect on fatigue rating (probability distribution)",
-          labels = rev(c("Skin colour: Lightness", "Skin colour: Redness", "Skin colour: Yellowness", "Eye-openness","Mouth curvature"))) + theme_ridges() + theme(legend.position = "none")
+          labels = rev(c("Skin colour: Lightness", "Skin colour: Redness", "Skin colour: Yellowness", "Eye-openness","Mouth curvature", "Periorbital darkness"))) + theme_ridges() + theme(legend.position = "none")
 
 figure_to_change <- ggplot_build(figure)
 
-figure_to_change$data[[3]]$fill[which(figure_to_change$data[[3]]$group==3)] <- "#56B4E9"
-figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==3)] <- 2
-figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==4)] <- 0
+figure_to_change$data[[3]]$fill[which(figure_to_change$data[[3]]$group==4)] <- "#00b159"
 figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==5)] <- 0
+figure_to_change$data[[3]]$linetype[which(figure_to_change$data[[3]]$group==6)] <- 0
 figure_edit <- ggplot_gtable(figure_to_change)
 grid::grid.newpage()
 grid::grid.draw(figure_edit)
 
-tired_prediction.mcmc.Face_L <- as.mcmc(tired_prediction.model,"b_a_face_L", combine_chains = T) 
-tired_prediction.mcmc.Face_a <- as.mcmc(tired_prediction.model,"b_b_face_a", combine_chains = T) 
-tired_prediction.mcmc.Face_b <- as.mcmc(tired_prediction.model,"c_face_b", combine_chains = T) 
-tired_prediction.mcmc.iOpenness <- as.mcmc(tired_prediction.model,"b_d_eye_openness", combine_chains = T)
-tired_prediction.mcmc.smile <- as.mcmc(tired_prediction.model,"e_mouth_curve", combine_chains = T)
+fatigue_prediction.mcmc.Face_L <- as.mcmc(fatigue_prediction.model,"b_a_face_L", combine_chains = T) 
+fatigue_prediction.mcmc.Face_a <- as.mcmc(fatigue_prediction.model,"b_b_face_a", combine_chains = T) 
+fatigue_prediction.mcmc.Face_b <- as.mcmc(fatigue_prediction.model,"c_face_b", combine_chains = T) 
+fatigue_prediction.mcmc.iOpenness <- as.mcmc(fatigue_prediction.model,"b_d_eye_openness", combine_chains = T)
+fatigue_prediction.mcmc.smile <- as.mcmc(fatigue_prediction.model,"e_mouth_curve", combine_chains = T)
+fatigue_prediction.mcmc.periorbital <- as.mcmc(fatigue_prediction.model,"f_periorbital_colour", combine_chains = T)
 
-mcmc.pval(tired_prediction.mcmc.Face_L)
-mcmc.pval(tired_prediction.mcmc.Face_a)
-mcmc.pval(tired_prediction.mcmc.Face_b)
-mcmc.pval(tired_prediction.mcmc.iOpenness)
-mcmc.pval(tired_prediction.mcmc.smile)
 
+mcmc.pval(fatigue_prediction.mcmc.Face_L)
+mcmc.pval(fatigue_prediction.mcmc.Face_a)
+mcmc.pval(fatigue_prediction.mcmc.Face_b)
+mcmc.pval(fatigue_prediction.mcmc.iOpenness)
+mcmc.pval(fatigue_prediction.mcmc.smile)
+mcmc.pval(fatigue_prediction.mcmc.periorbital)
+```
+
+#clasification of sleep state using extracted facial features
+```{r}
+seeds <- vector(mode = "list", length = 31)
+for(i in 1:531) seeds[[i]] <- sample.int(1000, 22)
+
+table(fatigue_predictors_data_new$sleep_deprived) #90/90 - the same number in each condition
+
+fatigue_predictors_data_new$sleep_deprived_new_names <- make.names(fatigue_predictors_data_new$sleep_deprived)
+
+trainIndex <- createDataPartition(fatigue_predictors_data_new$sleep_deprived_new_names, p = .7, 
+                                  list = FALSE)
+
+dtrain<-fatigue_predictors_data_new[trainIndex,]
+dtest<-fatigue_predictors_data_new[-trainIndex,]
+
+TrControl <- trainControl(method = "cv",
+                          number = 10,
+                        allowParallel = TRUE, savePredictions = TRUE, seeds = seeds, summaryFunction=twoClassSummary, classProbs=TRUE)
+
+mod_fit <- train(sleep_deprived_new_names ~ a_face_L + b_face_a + c_face_b + d_eye_openness + 
+                   e_mouth_curve + f_periorbital_colour,  data=dtrain, method="glm", family="binomial",
+                 trControl = TrControl, tuneLength = 5,metric="ROC")
+summary(mod_fit)
+
+roc(mod_fit$pred$obs,
+         mod_fit$pred$X1,
+    ci = T) #model prediction ROC AUC
+
+pred = predict(mod_fit, newdata=dtest)
+tablepred <- table(data=pred, dtest$sleep_deprived_new_names)
+confusionMatrix(tablepred, positive = "X1")
+
+p <- predict(mod_fit, dtest, type = "prob")
+roc(dtest$sleep_deprived_new_names,
+         p$X1,
+    ci = T) #test prediction ROC AUC
 ```
 

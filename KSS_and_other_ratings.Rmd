@@ -24,7 +24,6 @@ set.seed(556644)
 ```
 
 Importing dataset
-* original multilevel dataset (not perrett one)
 * split into 3 seperate data-sets
 ```{r}
 photoRatings_Completedata <- read.csv("photo_ratings.csv")
